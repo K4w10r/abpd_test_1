@@ -18,10 +18,23 @@ public class BooksController : ControllerBase
     public async Task<IActionResult> GetAnimal(int id)
     {
         if (!await _booksRepository.DoesBookExist(id))
-            return NotFound($"Animal with given ID - {id} doesn't exist");
+            return NotFound($"Book with given ID - {id} doesn't exist");
 
         var book = await _booksRepository.GetBook(id);
 
         return Ok(book);
+    }
+
+    [HttpDelete("genres/{id}")]
+    public async Task<IActionResult> DeleteGenre(int id)
+    {
+        if (!await _booksRepository.DoesGenreExist(id))
+        {
+            return NotFound($"Book with given ID - {id} doesn't exist");
+        }
+        
+        
+        
+        return Ok();
     }
 }

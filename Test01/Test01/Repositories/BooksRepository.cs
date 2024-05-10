@@ -128,4 +128,9 @@ public class BooksRepository : IBooksRepository
         
         return bookDto;
     }
+
+    public Task<int> DeleteGenre(int id)
+    {
+	    throw new NotImplementedException();
+    }
 }

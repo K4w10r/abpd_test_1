@@ -6,4 +6,5 @@ public interface IBooksRepository
     Task<bool> DoesBookExist(int id);
     Task<bool> DoesGenreExist(int id);
     Task<BookDto> GetBook(int id);
+    Task<int> DeleteGenre(int id);
 }
